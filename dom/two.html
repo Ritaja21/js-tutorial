@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+     <style>
+        .bg-black {
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    
+</body>
+<script>
+     const div = document.createElement('div')// creating an element
+    console.log(div);
+    div.className = "main"
+    div.setAttribute("title","generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    // div.innerText= "JOY GURU"
+    const addText = document.createTextNode("Hello people")
+    div.appendChild(addText);
+document.body.appendChild(div);
+const btn = document.createElement('button')
+btn.style.backgroundColor="red"
+btn.style.color="white"
+btn.style.padding="12px"
+btn.innerText="Click Me"
+btn.onclick = () => alert("YOU ARE BEING WATCHED!")
+document.body.appendChild(btn);
+</script>
+</html>

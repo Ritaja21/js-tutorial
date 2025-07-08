@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM3</title>
+      <style>
+        .bg-black {
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //it forms a tree structure to add each list which is not optimised
+    function addLanguage (langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage('Java')
+    //optimised approach 
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage('Typescript')
+
+    //Edit
+    const secondLanguage = document.querySelector("li:nth-child(2)")
+    // secondLanguage.innerHTML('Mojo')
+    const newLi = document.createElement('li')
+    newLi.textContent = "MOJO"
+    secondLanguage.replaceWith(newLi);
+    const firstLanguage = document.querySelector("li:first-child")
+    firstLanguage.outerHTML = "<li>Golang</li>"
+
+    //remove 
+    const lastlanguage = document.querySelector('li:last-child')
+    lastlanguage.remove()
+
+</script>
+</html>
