@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #clock {
+            font-size: 40px;
+            background-color: orange;
+            padding: 20px 50px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #212121;
+            border-radius: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div class="container">
+        <div id="banner"><span>Your Local Time</span></div>
+        <div id="clock"></div>
+    </div>
+    <button><a href="http://127.0.0.1:5501/dom_projects/index.html">Back to Home</a></button>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: white;
+        }
+
+        #wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .formresult {
+            min-height: 50vh;
+            padding: 20px 50px;
+            background-color: grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .guessSubmit {
+            padding: 10px;
+            background-color: #212121;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .resultParas {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            ;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #212121;
+            border-radius: 10px;
+            color: white;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: white
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div id="wrapper">
+        <h1>Number Guessing Game</h1>
+        <p>Try and guess a random number between 1 and 100</p>
+        <p>You have 10 attempts to guess the right answer</p>
+        </br>
+        <div class="formresult">
+            <form class="form">
+                <label for="guessField" id="guess">Guess a number</label>
+                <input type="text" id="guessField" class="guessField">
+                <input type="submit" id="subt" value="Submit guess" class="guessSubmit">
+            </form>
+
+            <div class="resultParas">
+                <p>Previous Guesses: <span class="guesses"></span></p>
+                <p>Guesses Remaining: <span class="lastResult">10</span></p>
+                <p class="lowOrHi"></p>
+            </div>
+        </div>
+    </div>
+    <button><a href="http://127.0.0.1:5501/dom_projects/index.html">Back to Home</a></button>
+    <script src="script.js"></script>
+</body>
+
+</html>
