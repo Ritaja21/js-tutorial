@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white
+        }
+
+        button {
+            background-color: #212121;
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px 20px;
+        }
+
+        button:hover {
+            background-color: white;
+            color: #212121;
+        }
+
+        .card {
+            width: 300px;
+            background-color: white;
+            color: #212121;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .card img {
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #212121;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Provide user info card</h1>
+    <p>On clicking on the get button you will get the github user card</p>
+    <button id="get">Get</button>
+
+</body>
+<script>
+    const requestUrl = "https://api.github.com/users/ritaja21"
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            const cardDiv = document.createElement('div')
+            cardDiv.className = 'card'
+            cardDiv.innerHTML = `
+            <img src="${data.avatar_url}" alt="Avatar">
+            <h2>${data.name}</h2>
+            <p>${data.bio}</p>
+            <a href= "${data.html_url}">Github Profile</a>`;
+            document.body.appendChild(cardDiv);
+        }
+    }
+
+
+    const button = document.querySelector('#get').addEventListener('click', function () {
+        xhr.send();
+    })
+
+
+    //most of the time the response data we get 
+    // is of string type
+</script>
+
+</html>
