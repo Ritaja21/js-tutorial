@@ -8,7 +8,9 @@
  rejected: meaning that the operation failed. 
 
  Promise is an object represents the eventual completion or failure of an 
- asynchronous operation.*/
+ asynchronous operation.
+ In modern programming we use prommise rather than async await
+ For eg: in mobile dev we need to activate the sound and camera device which needs promise object*/
 
 const promiseOne = new Promise(function (resolve, reject) {
     //Do async task
